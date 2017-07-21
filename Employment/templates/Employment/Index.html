@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends 'Base/Base.html' %}
+{% load static %}
+
+{% block title %}Employment - {% endblock %}
+
+{% block csslink %}
+    <link rel="stylesheet" type="text/css" href="{%  static 'Employment/index.css' %}"/>
+{% endblock %}
+
+{% block content %}
+    <section class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <table style="font-size: 1.5em;">
+                    <tr>
+                        <th>Job Title</th>
+                        <th>Post Date</th>
+                        <th>Due Date</th>
+                    </tr>
+                    {% if  jobPost %}
+                        {% for job in jobPost %}
+                            <tr>
+                                <td><a href="{% url 'Employment:detail' job.id %}">{{ job.job_title }}</a></td>
+                                <td>{{ job.post_date }}</td>
+                                <td>{{ job.due_date }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td>No jobs are available.</td>
+                        </tr>
+                    {% endif %}
+                </table>
+            </div>
+        </div>
+    </section>
+{% endblock %}

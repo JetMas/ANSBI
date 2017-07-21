@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends 'Base/Base.html' %}
+{% load static %}
+
+{% block title %}Employment - {% endblock %}
+
+
+{% block csslink %}{% endblock %}
+
+
+{% block content %}
+    <section class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2><strong>{{ job.job_title }}</strong></h2>
+                <p>Posted on: {{ job.post_date }}</p>
+                <p>Date due: {{ job.due_date }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <h3><strong>Overview: </strong></h3>
+                <p>{{ job.job_overview }}</p>
+                <h3><strong>Qualifications: </strong></h3>
+                <p>{{ job.qualifications }}</p>
+                <br>
+                <h3><strong>For the full job description click <a href="/media/{{ job.job_PD }}">here.</a></strong></h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12" style="align-content: center">
+                <a href="/employment/apply" class="btn btn-primary btn-lg btn-block" role="button">Apply</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

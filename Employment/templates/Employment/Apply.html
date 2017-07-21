@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% extends 'Base/Base.html' %}
+{% load static %}
+
+{% block title %}Employment - {% endblock %}
+
+{% block csslink %}
+    <link rel="stylesheet" type="text/css" href="{%  static 'Employment/style.css' %}"/>
+{% endblock %}
+
+{% block content %}
+    <section class="container">
+        {% if applied %}
+            <h2><strong>Your Application Was Successfully Submitted.</strong></h2>
+            <h3>You will be redirected in 3 seconds</h3>
+            <script>
+                var timer = setTimeout(function() {
+                    window.location='/employment'
+                }, 3000);
+            </script>
+        {% else %}
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2><strong>To apply, please download and complete the application below. Then upload and submit the completed form along with the requested documents.</strong></h2>
+                    <h3><strong>The accepted file types are .pdf, .doc, .docx, .ppt, .pptx, .txt, .xls, .xlxs, .jng, .png, .gif, .jpeg, and .zip</strong></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <p style="font-size: 2em"><strong>Click below to get the ANSBI Application and guide lines.</strong></p>
+                    <table style="font-size: 1.75em;">
+                        {% if  guideLines %}
+                            {% for guide in guideLines %}
+                                <tr>
+                                    <td><a href="/media/{{ guide.file }}">{{ guide.name }}</a></td>
+                                </tr>
+                            {% endfor %}
+                        {% else %}
+                            <tr>
+                                <td>No jobs are available.</td>
+                            </tr>
+                        {% endif %}
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" style="font-size: 1.5em">
+                    <form method="POST" action="" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <div style="padding: 10px">
+                                {% if field.errors %}
+                                    {% for error in field.errors %}
+                                        <p style="color: red">{{ error }}</p>
+                                    {% endfor %}
+                                {% endif %}
+                                {{ field.label_tag }}{{ field }}
+                            </div>
+                        {% endfor %}
+                        <br>
+                        {{ attachment_formset.management_form }}
+                        <div class="attachment-formset">
+                            {% for form in attachment_formset %}
+                                <h4><strong>File:</strong></h4>
+                                {{ form.file }}
+                                {% if form.file.errors %}
+                                    {% for error in form.file.errors %}
+                                        {{ error|escape }}
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <br>
+                        <input type="submit" name="submit" value="Apply"/> <h4><strong>You will be prompted if the your application was successfully submitted.</strong></h4>
+                    </form>
+                    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                    <script src="{% static 'Employment/jquery.formset.js' %}"></script>
+                    <script>
+                        $('.attachment-formset').formset({
+                            addText: 'add',
+                            deleteText: 'remove'
+                        });
+                    </script>
+                </div>
+            </div>
+        {% endif %}
+    </section>
+{% endblock %}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends 'Base/Base.html' %}
+{% load static %}
+
+{% block title %}Administration - {% endblock %}
+
+
+{% block content %}
+    <section class="container">
+        <div class="row">
+            <div class="col-sm-12" style="text-align: center">
+                <h2><strong>Administration</strong></h2>
+            </div>
+        </div>
+        <div class="row" style="text-align: center;">
+            <div class="col-sm-3">
+                <h3><a href="/administration/facilities"><strong>Facilities</strong></a></h3>
+            </div>
+            <div class="col-sm-3">
+                <h3><a href="/administration/forestry"><strong>Forestry</strong></a></h3>
+            </div>
+            <div class="col-sm-3">
+                <h3><a href="/administration/kabr"><strong>KABR</strong></a></h3>
+            </div>
+            <div class="col-sm-3">
+                <h3><a href="/administration/waterdept"><strong>Water Dept.</strong></a></h3>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-4">
+                <p style="font-size: 1.5em">The ANSBI Administration Division provides several services to include but not limit to: Payroll, Grants Management & encumbrance, Finance & Accounting, Accounts payable, Accounts Receivable, Human Resources, Facilities Management, Roads, Staff Housing & Telecommunication and Security.</p>
+            </div>
+            <div class="col-sm-8">
+                <img src="{% static 'Base/images/business_office.JPG' %}">
+            </div>
+        </div>
+    </section>
+{% endblock %}

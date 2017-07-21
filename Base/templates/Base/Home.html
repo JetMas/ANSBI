@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends 'Base/Base.html' %}
+{% load static %}
+
+{% block title %}Home - {% endblock %}
+
+{% block content %}
+    <section class="container" style="margin: auto">
+        <div class="row">
+            <figure class="col-sm-8">
+                <p id="statement" style="font-size: 1.5em"><strong>Vision Statement: </strong>“It is the Vision of the Alamo Navajo School Board, Inc., that Alamo community members will attain physical, spiritual and emotional well-being; community and individual self-sufficiency; and realize harmony between tradition, cultural values, and the mainstream environment.”</p>
+                <p id="statement" style="font-size: 1.5em"><strong>Mission Statement: </strong>“It is the Mission of the Alamo Navajo School Board, Inc., to provide the resources and services necessary to empower community members to attain good health and self-sufficiency through excellence in education.  ANSB, Inc., will carry out its mission in the spirit of Indian Self-Determination and local decision making in the planning and administration of its programs.”</p>
+            </figure>
+            <figure class="col-sm-4">
+                <img src="{% static 'Base/images/Logo.jpg' %}" >
+            </figure>
+        </div>
+    </section>
+{% endblock %}
+
+yr

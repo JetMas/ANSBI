@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% extends 'Base/Base.html' %}
+{% load static %}
+
+{% block title %}Early Childhood - {% endblock %}
+
+
+
+{% block content %}
+    <section class="container">
+        <div class="row">
+            <div class="col-sm-12" style="text-align: center">
+                <h2><strong>Early Childhood</strong></h2>
+            </div>
+        </div>
+        <div class="row" style="text-align: center;">
+            <div class="col-sm-4">
+                <h3><a href="/earlychildhood/faq"><strong>F.A.Q</strong></a></h3>
+            </div>
+            <div class="col-sm-4">
+                <h3><a href="/earlychildhood/governance"><strong>Governance</strong></a></h3>
+            </div>
+            <div class="col-sm-4">
+                <h3><a href="/earlychildhood/programs"><strong>Programs</strong></a></h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="{% static 'Base/images/EarlyChildhood.JPG' %}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <h3><strong>Overview of the Early Childhood Center</strong></h3>
+                <p style="font-size: 1.5em">The safe and pleasant physical environment is one of the strengths of the Early Childhood Center. Some classroom windows look out on to a view of mountains and blue skies. The classrooms are designed for active learning as well as maximum participation of the enrolled children. Housing 5 programs, the Early Childhood Center is a model environment envied by many other early childhood programs in other locations. The building is spacious, with plenty of accommodations for children’s well being. Classrooms are well organized and labeled with pictures, some with labels printed in English and Navajo. This allows children to practice emerging language and housekeeping skills, with as much independence as they are able to demonstrate at their appropriate age level. Each child also has a personal cubby space in order to store their belongings when they enter the classroom. There is a changing room and/or a restroom conveniently located between two classrooms, as well as a sink in the restroom for children to learn to brush their teeth and to wash their hands.  During times of cooperating weather, the classes may plant a garden and use these gardens as learning tools to help the children develop their skills. The playground is safe and conducive to physical development. There is a rubberized surface to help alleviate injury to children usually caused by regular ground surfaces. There is a large canopy over the playground to provide some protection from the sun’s ultraviolet rays and from the heat on the warm summer days. Parents and visitors are welcomed by a staff member as they enter the building. This building is open, airy and gives incoming guests a welcoming feeling. Families, staff members and community members are proud of the center and this pride is demonstrated on banners or quilts that are made by different parents and community members and are on display throughout the center. There is a roomy Multi-purpose room that is used for meals for older children, meetings and other activities sponsored by the center and others for community functions. The Early Childhood Center is an inviting place for children to come and learn!</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <h3><strong>Mission</strong></h3>
+                <p style="font-size: 1.5em">The mission of the Alamo Early Childhood Center is to assure that all children (birth-5), families, and staff have the opportunity to be educated and able to carry on the work of building Alamo. We are committed to providing quality services and respecting the people of Alamo for who they are. We intend to encourage the community to have pride in their history, language, culture and achievements. We are willing to honor and learn from each other. We are dedicated to making a child’s first experience with education a joyful one.</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

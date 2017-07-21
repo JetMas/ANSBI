@@ -1,0 +1,12 @@
+.add-row {
+    display: block;
+    margin-top: 15px;
+}
+
+.add-row:before {
+    margin-right: 0.3em;
+}
+
+.delete-row:before{
+    margin-right: 0.3em;
+}

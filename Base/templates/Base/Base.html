@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>{%  block title %}{% endblock %}ANSBI</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link type="text/css" rel="stylesheet"  href="{%  static 'Base/style.css' %}"/>
+    {% block csslink %}{% endblock %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            background: beige;
+        }
+    </style>
+</head>
+
+<body>
+	<div class="jumbotron text-center">
+		<h1>Alamo Navajo School Board Inc.</h1>
+	</div>
+
+    <div class="navbar navbar-default" role="navigation" style="font-size: 1.2em">
+        <div class="container-fuild">
+                <div class="navbar-header">
+                <a class="navbar-brand" href="/">ANSBI</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="/administration" class="dropdown-toggle">Administration <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/administration/facilities">Facilities</a></li>
+                        <li><a href="/administration/forestry">Forestry</a></li>
+                        <li><a href="/administration/kabr">KABR</a></li>
+                        <li><a href="/administration/waterdept">Water Dept.</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="/communityservices" class="dropdown-toggle">Community Services <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/communityservices/financialaid">Financial Aid</a></li>
+                        <li><a href="/communityservices/programs">Programs</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="/earlychildhood" class="dropdown-toggle">Early Childhood <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/earlychildhood/faq">F.A.Q</a></li>
+                        <li><a href="/earlychildhood/governance">Governance</a></li>
+                        <li><a href="/earlychildhood/programs">Programs</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="/healthservices" class="dropdown-toggle">Health Services <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/healthservices/dental">Dental</a></li>
+                        <li><a href="/healthservices/ems">EMS</a></li>
+                        <li><a href="/healthservices/lab">Lab</a></li>
+                        <li><a href="/healthservices/pharmacy">Pharmacy</a></li>
+                        <li><a href="/healthservices/services">Other Services</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="/school" class="dropdown-toggle">School <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/school/elementary">Elementary School</a></li>
+                        <li><a href="/school/middle">Middle School</a></li>
+                        <li><a href="/school/high">High School</a></li>
+                    </ul>
+                </li>
+                <li><a href="/wellness">Welness Center</a></li>
+                <li><a href="/employment">Employment</a></li>
+            </ul>
+        </div>
+    </div>
+
+	{% block content %}
+	{% endblock %}
+
+	<footer style="align-content: center">
+			<div class="navbar navbar-default" role="navigation" >
+				<div class="container-fuild" >
+					<!--
+					<div class="navbar-header">
+					  <a class="navbar-brand" href="/">WebSiteName</a>
+					</div>
+					-->
+					<ul class="nav navbar-nav" style="font-size: 1.2em;">
+				
+						<li><a href="/aboutus">About Us</a></li>
+				
+						<li><a href="/contactus">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+	</footer>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% extends 'Base/Base.html' %}
+{% load static %}
+
+{% block title %}Employment - {% endblock %}
+
+
+{% block csslink %}{% endblock %}
+
+
+{% block content %}
+    <section class="container">
+        {% if not valid %}
+            <h2><strong>Oops! Something went wrong.</strong></h2>
+            <h3>You will be redirected in 3 seconds</h3>
+            <script>
+                var timer = setTimeout(function() {
+                    window.location='/employment'
+                }, 3000);
+            </script>
+        {% else %}
+            {% if posted%}
+                <h2><strong>The Job Was Successfully Posted.</strong></h2>
+                <h3>You will be redirected in 3 seconds</h3>
+                <script>
+                    var timer = setTimeout(function() {
+                        window.location='/employment'
+                    }, 3000);
+                </script>
+            {% else %}
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form method="POST" action="" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <br>
+                            <input type="submit" name="submit" value="Post"/>
+                        </form>
+                    </div>
+                </div>
+            {% endif %}
+        {% endif %}
+    </section>
+{% endblock %}

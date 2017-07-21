@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% extends 'Base/Base.html' %}
+{% load static %}
+
+{% block title %}Schools - {% endblock %}
+
+
+{% block content %}
+    <section class="container">
+        <div class="row">
+            <div class="col-sm-12" style="text-align: center">
+                <h2><strong>Alamo Navajo Community School</strong></h2>
+            </div>
+        </div>
+        <div class="row" style="text-align: center;">
+            <div class="col-sm-4">
+                <h3><a href="/school/elementary"><strong>Elementary</strong></a></h3>
+            </div>
+            <div class="col-sm-4">
+                <h3><a href="/school/middle"><strong>Middle School</strong></a></h3>
+            </div>
+            <div class="col-sm-4">
+                <h3><a href="/school/high"><strong>High School</strong></a></h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="{% static 'Base/images/alamo_school.JPG' %}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <h3><strong>Home of the Cougars</strong></h3>
+                <p style="font-size: 1.5em">The school facility was established in 1984 and accommodates students K-12 grades. It is accredited by the New Mexico State Department of Education and NCA. There are approximately 350 students in Alamo School.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <h3><strong>Navajo Culture and Language:</strong></h3>
+                <p style="font-size: 1.5em">The Alamo Navajo School will be implementing Navajo Culture in classroom K-8 school year 2008 – 2009. Navajo Culture is very important to our people, especially the children we are serving, because this type of learning can give us a positive Navajo image and identity. It will give us a good foundation to be strong and to have courage as a person. When we understand our own education, then we will have self understanding of where se came from, who we came from, who we are, what we are, why we are here and the direction we are going in our lives. If we, the Dine’, do not teach our own education, we will lose it.  If we lose it, we will lose our truce image. Then we will be without a clear sense of identity. We need to survive culturally here first before we take it somewhere else. This is a good step and the right step to move forward.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <h3><strong>Mission Statement:</strong></h3>
+                <p style="font-size: 1.5em">The mission of the Alamo Navajo Community School is to create and maintain an open learning environment that will encourage and assist each student to work toward his/her highest potential in communicating effectively, thinking creatively and critically, being a self-directed, responsible learner, discovering his/her talents, demonstrating compassion and dignity, and becoming a contributing member of the global society.</p>
+                <br>
+                <h3><strong>Vision Statement:</strong></h3>
+                <p style="font-size: 1.5em">The Alamo Navajo Community School's vision is to prepare its students to have unlimited choices after graduating from high school.</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}
