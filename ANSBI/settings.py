@@ -25,7 +25,7 @@ SECRET_KEY = '&d3@+&or-0m*2=c6rr%()y_1gs-6-v)pjpdp2oqr3!c1z)jew-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://jetmas.pythonanywhere.com/']
 
 
 # Application definition
