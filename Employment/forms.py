@@ -11,7 +11,7 @@ class JobForm(forms.ModelForm):
 class ApplicationForm(forms.ModelForm):
     class Meta:
         model = Application
-        fields = ['first_name', 'last_name',]
+        fields = ['first_name', 'last_name', 'application', 'resume', 'transcript', 'certificate_or_license', 'letter_of_interest',]
 
 class AttachmentForm(forms.ModelForm):
     class Meta:

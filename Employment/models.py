@@ -20,14 +20,14 @@ class Application(models.Model):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
 
-    '''
     application = models.FileField(upload_to='./applications/', validators=[validators.validate_file_extension])
-    resume = models.FileField(upload_to='./resume/', validators=[validators.validate_file_extension])
-
-    certificate_of_indian_blood = models.FileField(upload_to='./certificate_of_indian_blood/', blank=True, validators=[validators.validate_file_extension])
-    transcript_or_certificate = models.FileField('Official College Transcripts, if not then High School Transcripts/Diploma/GED',upload_to='./college_transcript_or_certificate/', blank=True, validators=[validators.validate_file_extension])
-    certificate_or_license_for_position = models.FileField('Certificate or License applicable to the position (if applicable)',upload_to='./certificate_or_license_for_position', blank=True, validators=[validators.validate_file_extension])
+    resume = models.FileField(upload_to='./resumes/', validators=[validators.validate_file_extension])
+    transcript = models.FileField('Official College Transcripts, if not then High School Transcripts/Diploma/GED',upload_to='./transcripts/', blank=True, validators=[validators.validate_file_extension])
+    certificate_or_license = models.FileField('Certificate or License applicable to the position (if applicable)',upload_to='./certificates_or_licenses', blank=True, validators=[validators.validate_file_extension])
     letter_of_interest = models.FileField('Letter of Interest for the position',upload_to='./letter_of_interest/', blank=True, validators=[validators.validate_file_extension])
+
+    '''
+    certificate_of_indian_blood = models.FileField(upload_to='./certificate_of_indian_blood/', blank=True, validators=[validators.validate_file_extension])
     first_letter_of_recommendation = models.FileField(upload_to='./first_letter_of_recommendation/', blank=True, validators=[validators.validate_file_extension])
     second_letter_of_recommendation = models.FileField(upload_to='./second_letter_of_recommendation/', blank=True, validators=[validators.validate_file_extension])
     third_letter_of_recommendation = models.FileField(upload_to='./third_letter_of_recommendation/', blank=True, validators=[validators.validate_file_extension])
