@@ -21,7 +21,7 @@ def apply(request):
     guideLines = models.GuideLine.objects.all().order_by('date')
     AttachmentFormset = formset_factory(AttachmentForm)
     if request.method == 'POST':
-        applicationForm = ApplicationForm(request.POST)
+        applicationForm = ApplicationForm(request.POST, request.FILES)
         attachment_formset = AttachmentFormset(request.POST, request.FILES)
         if applicationForm.is_valid() and attachment_formset.is_valid():
             application = applicationForm.save(commit=False)
