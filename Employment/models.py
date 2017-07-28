@@ -17,8 +17,8 @@ class JobPost(models.Model):
     due_date = models.DateField('due date')
 
 class Application(models.Model):
-    first_name = models.CharField(max_length=200)
-    last_name = models.CharField(max_length=200)
+    first_name = models.CharField('*First Name', max_length=200)
+    last_name = models.CharField('*Last Name', max_length=200)
 
     application = models.FileField('*Application', upload_to='./applications/', blank=False, validators=[validators.validate_file_extension])
     resume = models.FileField('*Resume', upload_to='./resumes/', blank=False, validators=[validators.validate_file_extension])
