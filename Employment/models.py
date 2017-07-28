@@ -20,11 +20,12 @@ class Application(models.Model):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
 
-    application = models.FileField(upload_to='./applications/', validators=[validators.validate_file_extension])
-    resume = models.FileField(upload_to='./resumes/', validators=[validators.validate_file_extension])
-    transcript = models.FileField('Official College Transcripts, if not then High School Transcripts/Diploma/GED',upload_to='./transcripts/', blank=True, validators=[validators.validate_file_extension])
-    certificate_or_license = models.FileField('Certificate or License applicable to the position (if applicable)',upload_to='./certificates_or_licenses', blank=True, validators=[validators.validate_file_extension])
-    letter_of_interest = models.FileField('Letter of Interest for the position',upload_to='./letter_of_interest/', blank=True, validators=[validators.validate_file_extension])
+    application = models.FileField('*Application', upload_to='./applications/', blank=False, validators=[validators.validate_file_extension])
+    resume = models.FileField('*Resume', upload_to='./resumes/', blank=False, validators=[validators.validate_file_extension])
+    letter_of_interest = models.FileField('*Letter of Interest for the position',upload_to='./letter_of_interest/', blank=False, validators=[validators.validate_file_extension])    
+    transcript = models.FileField('Official College Transcripts, official transcripts must be submitted upon employment',upload_to='./transcripts/', blank=True, validators=[validators.validate_file_extension])
+    certificate_or_license = models.FileField('Certificate or License applicable to the position',upload_to='./certificates_or_licenses', blank=True, validators=[validators.validate_file_extension])
+    certificate_of_indian_blood = models.FileField('Certificate of Indian Blood, required if you are claiming Indian preference', upload_to='./certificate_of_indian_blood', blank=True, validators=[validators.validate_file_extension])
 
     '''
     certificate_of_indian_blood = models.FileField(upload_to='./certificate_of_indian_blood/', blank=True, validators=[validators.validate_file_extension])

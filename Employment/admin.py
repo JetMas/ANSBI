@@ -15,7 +15,7 @@ class JobPostAdmin(admin.ModelAdmin):
 
 class AttachmentInline(admin.TabularInline):
     model = models.Attachment
-    extra = 3
+    extra = 0
 
 class ApplicationAdmin(admin.ModelAdmin):
     inlines = [AttachmentInline]

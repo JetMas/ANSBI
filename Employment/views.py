@@ -29,8 +29,9 @@ def apply(request):
             application.save()
             for forms in attachment_formset:
                 attachment = forms.save(commit=False)
-                attachment.link = application
-                attachment.save()
+                if attachment.file:
+                    attachment.link = application
+                    attachment.save()
             applied = True
     else:
         applicationForm = ApplicationForm()
